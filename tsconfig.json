@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "strict": true,
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "express"
+    ],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "moduleDetection": "force",
+    "noUncheckedSideEffectImports": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src"
+  ],
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"GetFriendsController.d.ts","sourceRoot":"","sources":["../../../src/controllers/friendsController/GetFriendsController.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAE5C,cAAM,oBAAoB;IAEhB,MAAM,CAAC,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;CAY3C;AAED,OAAO,EAAE,oBAAoB,EAAE,CAAA"}
