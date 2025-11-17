@@ -8,10 +8,6 @@ interface Payload {
 
 export function isAuthenticated(req: Request, res: Response, next: NextFunction) {
 
-       if (req.method === "OPTIONS") {
-        return next();
-    }
-
     const authToken = req.headers.authorization;
     logger.info(req.headers.authorization)
 
