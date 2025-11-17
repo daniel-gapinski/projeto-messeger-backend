@@ -9,6 +9,18 @@ import { logger } from "./logger";
 
 const app = express();
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://projeto-messeger-frontend.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(cors());
 app.use(router);
@@ -23,18 +35,6 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://projeto-messeger-frontend.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if(err instanceof Error) {
