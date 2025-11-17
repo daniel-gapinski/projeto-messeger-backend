@@ -15,10 +15,26 @@ app.use(router);
 
 const server = createServer(app);
 const io = new Server(server, {
-    cors: {
-        origin: "*",
-    },
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://projeto-messeger-frontend.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+  },
 });
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://projeto-messeger-frontend.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if(err instanceof Error) {
